@@ -1,6 +1,8 @@
-# simple-state
+# @codeforcoffee/simple-state
 
 Simple State for SPAs
+
+> https://www.npmjs.com/package/@codeforcoffee/simple-state
 
 [![Build Status](https://travis-ci.org/code-for-coffee/simple-state.svg?branch=master)](https://travis-ci.org/code-for-coffee/simple-state)
 
