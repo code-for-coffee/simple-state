@@ -36,11 +36,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 /**
- * Created by codeforcoffee on 6/2/17.
+ * Created by codeforcoffee on 11/2/18.
  */
 var SimpleState =
 /*#__PURE__*/
 function () {
+  /**
+   * constructor
+   * @param {*} initialState
+   */
   function SimpleState() {
     var initialState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
@@ -55,12 +59,22 @@ function () {
     };
     this.initialState = initialState;
   }
+  /**
+   * Returns initial state
+   */
+
 
   _createClass(SimpleState, [{
     key: "getInitialState",
     value: function getInitialState() {
       return _objectSpread({}, this.initialState);
     }
+    /**
+     * Update the store. MergeArrays is true by default.
+     * @param {*} newAttributes
+     * @param {Boolean} mergeArrays
+     */
+
   }, {
     key: "updateStore",
     value: function updateStore() {
@@ -96,16 +110,28 @@ function () {
       this.appStore = nextState;
       return currentState;
     }
+    /**
+     * Get current state
+     */
+
   }, {
     key: "getState",
     value: function getState() {
       return this.appStore.state;
     }
+    /**
+     * Get prior state
+     */
+
   }, {
     key: "getPreviousState",
     value: function getPreviousState() {
       return this.appStore.previousState;
     }
+    /**
+     * converts state to JSON
+     */
+
   }, {
     key: "toJSON",
     value: function toJSON() {
