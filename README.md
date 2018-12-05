@@ -8,12 +8,12 @@ Simple State for SPAs
 
 ## Install
 
-`npm install simple-state` or `yarn add simple-state`
+`npm install @codeforcoffee/simple-state` or `yarn add @codeforcoffee/simple-state`
 
 **ES Module**
 
 ```
-import SimpleState from 'simple-state';
+import SimpleState from '@codeforcoffee/simple-state';
 ```
 
 ## Getting Started
