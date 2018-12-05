@@ -1,8 +1,10 @@
-# simple-state
+# @codeforcoffee/simple-state
 
 Simple State for SPAs
 
-[![Build Status](https://travis-ci.org/code-for-coffee/simple-state.svg?branch=master)](https://travis-ci.org/code-for-coffee/simple-state) [![codecov](https://codecov.io/gh/code-for-coffee/simple-state/branch/master/graph/badge.svg)](https://codecov.io/gh/code-for-coffee/simple-state)
+> https://www.npmjs.com/package/@codeforcoffee/simple-state
+
+[![Build Status](https://travis-ci.org/code-for-coffee/simple-state.svg?branch=master)](https://travis-ci.org/code-for-coffee/simple-state)
 
 ## Install
 
@@ -11,7 +13,7 @@ Simple State for SPAs
 **ES Module**
 
 ```
-import SimpleState from 'simple-state';
+import SimpleState from '@codeforcoffee/simple-state';
 ```
 
 ## Getting Started
