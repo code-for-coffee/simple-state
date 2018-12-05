@@ -20,6 +20,50 @@ import SimpleState from '@codeforcoffee/simple-state';
 
 After importing the library, you can create as many instances as you'd like (but likely should not).
 
+If you use `create-react-app` or anything else that uses babel, you will need to update your config files for your project to enable `@babel/plugin-proposal-class-properties`.
+
+##### Generic Babel Config
+
+Install the following packages:
+
+```sh
+npm i --save-dev @babel/preset-env @babel/preset-react @babel/plugin-proposal-class-properties
+```
+
+```
+"babel": {
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    [
+      "@babel/plugin-proposal-class-properties"
+    ]
+  ]
+}
+```
+
+##### create-react-app
+
+If using CRA, follow the above steps (the config block will be added to your **package.json**), `npm i @codeforcoffee/simple-state`.
+
+You will need to `npm run eject`. From there, in your `scripts/webpack.*.config` files, update your Babel config block:
+
+```js
+presets: [
+  [
+    require.resolve("babel-preset-react-app/dependencies"),
+    { helpers: true }
+  ]
+],
+plugins: ["@babel/plugin-proposal-class-properties"],
+```
+
+#### Examples
+
+An example application is located in this repository under the _example_ folder.
+
 ```js
 store = new SimpleState({ amiibo: [] });
 ```

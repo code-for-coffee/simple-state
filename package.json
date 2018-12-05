@@ -1,6 +1,6 @@
 {
   "name": "@codeforcoffee/simple-state",
-  "version": "1.0.0-beta.0",
+  "version": "1.0.0-beta.1",
   "description": "Simple State for SPAs",
   "main": "dist/index.js",
   "module": "src/index.js",
