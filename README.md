@@ -2,7 +2,7 @@
 
 Simple State for SPAs
 
-[![Build Status](https://travis-ci.org/code-for-coffee/simple-state.svg?branch=master)](https://travis-ci.org/code-for-coffee/simple-state) [![codecov](https://codecov.io/gh/code-for-coffee/simple-state/branch/master/graph/badge.svg)](https://codecov.io/gh/code-for-coffee/simple-state)
+[![Build Status](https://travis-ci.org/code-for-coffee/simple-state.svg?branch=master)](https://travis-ci.org/code-for-coffee/simple-state)
 
 ## Install
 
