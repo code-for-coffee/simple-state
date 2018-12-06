@@ -28,27 +28,27 @@ class SimpleState {
    * @param {Boolean} mergeArrays
    */
   updateStore(newAttributes = {}, mergeArrays = true) {
-    let currentState = this.appStore;
-    let existingArrays = () => {
-      let arraysInState = Object.keys(this.appStore.state).map(key => {
+    const currentState = this.appStore;
+    const existingArrays = () => {
+      const arraysInState = Object.keys(this.appStore.state).map(key => {
         if (Array.isArray(this.appStore.state[key])) return key;
       });
-      let arraysInNextState = Object.keys(newAttributes).map(key => {
+      const arraysInNextState = Object.keys(newAttributes).map(key => {
         if (Array.isArray(newAttributes[key])) return key;
       });
-      let result = arraysInState.filter(key => arraysInNextState.includes(key));
-      let obj = {};
+      const result = arraysInState.filter(key => arraysInNextState.includes(key));
+      const obj = {};
 
       result.forEach(key => {
         if (!key) return;
-        let state = this.appStore.state;
+        const state = this.appStore.state;
         obj[key] = state[key].concat(newAttributes[key]);
       });
 
       return obj;
     };
 
-    let nextState = {
+    const nextState = {
       state: {
         ...currentState.state,
         ...newAttributes,
