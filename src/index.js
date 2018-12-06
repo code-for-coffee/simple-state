@@ -2,7 +2,7 @@
  * Created by codeforcoffee on 11/2/18.
  */
 class SimpleState {
-  appStore = { state: undefined };
+  //appStore = { state: undefined };
 
   /**
    * constructor
@@ -36,7 +36,9 @@ class SimpleState {
       const arraysInNextState = Object.keys(newAttributes).map(key => {
         if (Array.isArray(newAttributes[key])) return key;
       });
-      const result = arraysInState.filter(key => arraysInNextState.includes(key));
+      const result = arraysInState.filter(key =>
+        arraysInNextState.includes(key)
+      );
       const obj = {};
 
       result.forEach(key => {

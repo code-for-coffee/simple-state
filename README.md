@@ -6,12 +6,6 @@ Simple State for SPAs
 
 [![Build Status](https://travis-ci.org/code-for-coffee/simple-state.svg?branch=master)](https://travis-ci.org/code-for-coffee/simple-state)
 
-*Note if you are cloning for a PR you will have to
- `
-npm install --save-dev @babel/core @babel/cli @babel/preset-env
-npm install --save @babel/polyfill
-`*
-
 ## Install
 
 `npm install @codeforcoffee/simple-state` or `yarn add @codeforcoffee/simple-state`
