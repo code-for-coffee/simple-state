@@ -9,7 +9,7 @@
     "build-tests": "./node_modules/.bin/babel src --out-dir dist",
     "gen-docs": "cat CHANGELOG.md >> README.md && node_modules/.bin/jsdoc src/ -d docs/ -t node_modules/docdash/ --readme README.md",
     "test": "nyc ./node_modules/mocha/bin/mocha tests/*test.js --reporter spec --compilers js:@babel/register --require @babel/polyfill",
-    "test-coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
+    "test-coverage": "npm run test && nyc report --reporter=text-lcov > coverage.lcov && codecov"
   },
   "keywords": [
     "state",
