@@ -30,6 +30,14 @@ describe("a SimpleState", () => {
   it("has a state and returns it", () => {
     const emptyInitialState = new SimpleState();
     const filledInitialState = new SimpleState({ kittens: "are awesome" });
+    expect(typeof emptyInitialState.getState).to.equal("function");
+    expect(typeof emptyInitialState.getState()).to.equal("object");
+    expect(Object.keys(emptyInitialState.getState()).length).to.equal(0);
+    expect(typeof filledInitialState.getState).to.equal("function");
+    expect(typeof filledInitialState.getState()).to.equal("object");
+    expect(Object.keys(filledInitialState.getState()).length).to.equal(1);
+    expect(filledInitialState.getState().hasOwnProperty("kittens"));
+    expect(filledInitialState.getState().kittens).to.equal("are awesome");
   });
   it("can return previousState", () => {
     const emptyInitialState = new SimpleState();
@@ -46,5 +54,9 @@ describe("a SimpleState", () => {
   it("returns state as JSON", () => {
     const emptyInitialState = new SimpleState();
     const filledInitialState = new SimpleState({ kittens: "are awesome" });
+    expect(emptyInitialState.toJSON()).to.equal(`{"state":{}}`);
+    expect(filledInitialState.toJSON()).to.equal(
+      `{"state":{"kittens":"are awesome"}}`
+    );
   });
 });
