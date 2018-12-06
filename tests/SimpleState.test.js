@@ -17,6 +17,7 @@ describe("a SimpleState", () => {
     expect(typeof emptyInitialState.getInitialState).to.equal("function");
     expect(typeof emptyInitialState.getInitialState()).to.equal("object");
     expect(Object.keys(emptyInitialState.getInitialState()).length).to.equal(0);
+    expect(emptyInitialState.getInitialState()).to.deep.equal({});
     expect(typeof filledInitialState.getInitialState).to.equal("function");
     expect(typeof filledInitialState.getInitialState()).to.equal("object");
     expect(Object.keys(filledInitialState.getInitialState()).length).to.equal(
@@ -26,6 +27,9 @@ describe("a SimpleState", () => {
     expect(filledInitialState.getInitialState().kittens).to.equal(
       "are awesome"
     );
+    expect(filledInitialState.getInitialState()).to.deep.equal({
+      kittens: "are awesome"
+    });
   });
   it("has a state and returns it", () => {
     const emptyInitialState = new SimpleState();
@@ -40,16 +44,43 @@ describe("a SimpleState", () => {
     expect(filledInitialState.getState().kittens).to.equal("are awesome");
   });
   it("can return previousState", () => {
-    const emptyInitialState = new SimpleState();
-    const filledInitialState = new SimpleState({ kittens: "are awesome" });
+    const state = new SimpleState({
+      cats: ["Magda", "Bidala", "Sam", "Uni"]
+    });
+    expect(state.getInitialState()).to.deep.equal({
+      cats: ["Magda", "Bidala", "Sam", "Uni"]
+    });
+    state.updateStore({ cats: ["Meowington"] });
+    expect(state.getState()).to.deep.equal({
+      cats: ["Magda", "Bidala", "Sam", "Uni", "Meowington"]
+    });
+    expect(state.getPreviousState()).to.deep.equal({
+      cats: ["Magda", "Bidala", "Sam", "Uni"]
+    });
   });
   it("updates the store and merges child array values by default", () => {
-    const emptyInitialState = new SimpleState();
-    const filledInitialState = new SimpleState({ kittens: "are awesome" });
+    const state = new SimpleState({
+      cats: ["Magda", "Bidala", "Sam", "Uni"]
+    });
+    expect(state.getInitialState()).to.deep.equal({
+      cats: ["Magda", "Bidala", "Sam", "Uni"]
+    });
+    state.updateStore({ cats: ["Meowington"] });
+    expect(state.getState()).to.deep.equal({
+      cats: ["Magda", "Bidala", "Sam", "Uni", "Meowington"]
+    });
   });
   it("can update the store and not merge child arrays", () => {
-    const emptyInitialState = new SimpleState();
-    const filledInitialState = new SimpleState({ kittens: "are awesome" });
+    const state = new SimpleState({
+      cats: ["Magda", "Bidala", "Sam", "Uni"]
+    });
+    expect(state.getInitialState()).to.deep.equal({
+      cats: ["Magda", "Bidala", "Sam", "Uni"]
+    });
+    state.updateStore({ cats: ["Meowington"] }, false);
+    expect(state.getState()).to.deep.equal({
+      cats: ["Meowington"]
+    });
   });
   it("returns state as JSON", () => {
     const emptyInitialState = new SimpleState();
