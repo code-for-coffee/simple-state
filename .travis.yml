@@ -4,8 +4,9 @@ node_js:
   - "9.0"
   - "10.0"
 install:
+  - npm i -g npm@latest
   - npm install -g codecov
   - npm ci
 script:
-  - istanbul cover ./node_modules/mocha/bin/_mocha --reporter lcovonly -- -R spec
+  - istanbul cover ./node_modules/mocha/bin/mocha --reporter lcovonly -- -R spec
   - codecov
